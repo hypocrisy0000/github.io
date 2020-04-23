@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>右舍咖啡廳</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.bootcss.com/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ----------nav bar---------- */
+
+        .btn_box {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .pos-f-t {
+            float: left;
+            width: 100%;
+        }
+
+        .btn {
+            width: 110px;
+            height: 50px;
+            border-radius: 0px;
+            font-family: 微軟正黑體;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .hvr-underline-from-left:before {
+            background-color: rgb(140, 192, 196);
+        }
+
+        .btn:hover {
+            color: rgb(184, 184, 184);
+            /* background-color: rgb(228, 228, 228); */
+            /* transition: 0.5s; */
+        }
+
+        nav {
+            float: right;
+        }
+
+
+        /* ----------按鈕---------- */
+        .nav-icon-6 {
+            width: 35px;
+            height: 30px;
+            margin: 50px 100px 0 0;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .nav-icon-6 span {
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            border-radius: 2px;
+            transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+            width: 100%;
+            height: 4px;
+        }
+
+        .nav-icon-6 span:nth-child(1) {
+            top: 0px;
+            left: 0px;
+        }
+
+        .nav-icon-6 span:nth-child(2) {
+            top: 13px;
+            left: 0px;
+        }
+
+        .nav-icon-6 span:nth-child(3) {
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .nav-icon-6:not(.open):hover span:nth-child(1) {
+            transform: scaleY(1.2);
+            left: -5px;
+        }
+
+        .nav-icon-6:not(.open):hover span:nth-child(2) {
+            transform: rotate(5deg) scaleY(1.1);
+        }
+
+        .nav-icon-6:not(.open):hover span:nth-child(3) {
+            transform: scaleY(1.2);
+            left: 5px;
+        }
+
+        .nav-icon-6.open span:nth-child(1) {
+            transform: rotate(45deg) scaleX(0.7);
+            top: 13PX;
+            left: -8px;
+        }
+
+        .nav-icon-6.open span:nth-child(2) {
+            transform: scale(0);
+            transition-duration: 50ms
+        }
+
+        .nav-icon-6.open span:nth-child(3) {
+            transform: rotate(-45deg) scaleX(0.7);
+            top: 13PX;
+            left: 7px;
+        }
+
+        /* ----------banner---------- */
+
+        #banner {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #banner .container-fluid {
+            padding: 0;
+        }
+
+        #banner .pic {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('./img/38085222_2032985673380377_3717374729619767296_o.jpg');
+        }
+
+        /* ----------關於右舍---------- */
+        #about {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #about .pic {
+            width: 100%;
+            height: 100vh;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            background-image: url('./img/50527396_2276388762373399_9200188735398871040_o.jpg');
+        }
+
+        #about .about_1 {
+            background-color: rgba(252, 252, 252, 0.445);
+            font-family: '微軟正黑體';
+            font-weight: bolder;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        #about .about_2 {
+            background-color: rgba(0, 0, 0, 0.445);
+            font-family: '微軟正黑體';
+            font-weight: bolder;
+            text-align: center;
+            padding: 10px 0;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+
+        #about h3 {
+            padding: 15px 0;
+        }
+
+        #about .about_text {
+            writing-mode: vertical-lr;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -7%;
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 35px;
+        }
+
+        /* ----------展覽---------- */
+        #exhibition {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        #exhibition .swiper-container {
+            padding: 150px 0 0 0;
+            height: 425px;
+        }
+
+        #exhibition .swiper-container img {
+            width: 100%;
+        }
+
+        #exhibition .exhibition_context {
+            width: 100%;
+            background-color: white;
+            padding: 170px 0;
+            line-height: 35px;
+            font-family: '微軟正黑體';
+        }
+
+        #exhibition .exhibition_pic {
+            width: 100%;
+            height: 35vh;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('./img/82940565_2968639826481619_2236654732502368256_o.jpg');
+        }
+
+        #exhibition .exhibition_text {
+            writing-mode: vertical-lr;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -7%;
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 35px;
+        }
+
+        #exhibition h2 {
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 0px auto;
+        }
+
+        .hvr-underline-from-center:before {
+            background-color: rgb(140, 192, 196);
+        }
+
+        #exhibition .ex_row {
+            position: relative;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+
+        /* <!------------咖啡豆------------> */
+        #coffeebeans .row_cb {
+            position: relative;
+            margin: 10px;
+        }
+
+        #coffeebeans h3 {
+            text-align: center;
+            font-family: "微軟正黑體";
+            margin: 40px 0;
+        }
+
+        #coffeebeans .row_cb img {
+            width: 100%;
+        }
+
+        #coffeebeans .cards {
+            margin: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #coffeebeans .txt {
+            font-family: "微軟正黑體";
+            font-weight: 900;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(252, 252, 252, 0.445);
+            position: absolute;
+            top: 60%;
+            left: 0;
+            text-align: center;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #coffeebeans .txt h5 {
+            font-weight: 900;
+            margin-bottom: 90px;
+        }
+
+        #coffeebeans .cards:hover .txt {
+            top: 0;
+        }
+
+        #coffeebeans .coffeebeans_text {
+            writing-mode: vertical-lr;
+            position: absolute;
+            top: 55%;
+            transform: translateY(-50%);
+            left: -7%;
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 35px;
+        }
+
+        /* ----------儲值卡---------- */
+        #card .row_card {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        #card .card_text {
+            writing-mode: vertical-lr;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -7%;
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 35px;
+        }
+
+        #card h3 {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            font-family: "微軟正黑體";
+
+        }
+
+        #card .card_context {
+            border: 5px black solid;
+            padding: 30px 0;
+            font-family: "微軟正黑體";
+
+        }
+
+        #card .card_context p {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        #card .card_context a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: brown;
+            text-decoration: none;
+        }
+
+        #Precautions .modal-body,
+        #card .card_context h5 {
+            font-family: "微軟正黑體";
+        }
+
+        #Precautions .modal-body p {
+            text-align: left;
+
+        }
+
+
+        /* ----------footer---------- */
+        #footer {
+            width: 100%;
+            background-color: rgb(39, 37, 48);
+        }
+
+        #footer .footer_copy {
+            text-align: center;
+            color: white;
+            font-family: "微軟正黑體";
+            padding: 20px 0;
+            border-top: rgb(253, 253, 253) 3px solid;
+        }
+
+        #footer .icon {
+            text-align: center;
+        }
+
+        #footer .icon img {
+            margin: 20px 10px;
+        }
+
+        #footer .footer_logo {
+            padding: 20px 0;
+        }
+
+        #footer .footer_text {
+            color: white;
+            text-align: right;
+            line-height: 23px;
+            font-family: "微軟正黑體";
+            padding: 20px 0;
+        }
+
+        #footer .footer_text .phone {
+            margin: 10px 0;
+            letter-spacing: 3.2px;
+        }
+
+        #footer .footer_text .time {
+            letter-spacing: 2.2px;
+        }
+
+
+        /* ----------gototop---------- */
+        .top {
+            width: 80px;
+            height: 80px;
+            /* border: black 1px solid; */
+            /* background-color: rgb(255, 255, 255); */
+            border-radius: 50px;
+            background-image: url('./img/up-arrow.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+
+        @media screen and (max-width:992px) {
+            #exhibition .exhibition_context {
+                padding: unset;
+            }
+
+            #about .pic {
+                background-size: cover;
+                margin: 10px 0;
+            }
+
+            #exhibition .swiper-container {
+                padding: 140px 0 0 0;
+                height: 550px;
+            }
+
+            #coffeebeans .txt h5 {
+                font-size: 30px;
+            }
+
+            #coffeebeans .txt {
+                font-size: 25px;
+            }
+
+            #footer .footer_logo,
+            #footer .footer_text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+
+
+
+
+        <!-- ----------NAV BAR---------- -->
+        <nav class="navbar navbar-dark ">
+            <div class="icon nav-icon-6" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="pos-f-t ">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-light p-4">
+                    <div class="btn_box">
+                        <div class="btns">
+                            <div class="btn hvr-underline-from-left">關於右舍</div>
+                            <div class="btn hvr-underline-from-left">小藝廊展覽</div>
+                            <div class="btn hvr-underline-from-left">咖啡豆</div>
+                            <div class="btn hvr-underline-from-left">菜單</div>
+                            <div class="btn hvr-underline-from-left">儲值卡</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ----------banner---------- -->
+    <section id="banner">
+        <div class="container-fluid">
+            <div class="pic">
+                <div class="logo"><img src="./img/logo.jpg" alt="" width="90px" height="90px"></div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------關於右舍---------- -->
+
+    <section id="about">
+        <div class="container">
+            <div class="row pic d-flex align-items-center">
+                <div class="about_text">About</div>
+                <div class="col-12 col-md-6">
+                    <div class="about_1" data-aos="fade-up" data-aos-duration="3000">
+                        <h3>關於右舍</h3>
+                        <p>右舍創立於 2008 年的 8 月<br>
+                            右舍咖啡是一家以外帶為主的精品咖啡館<br>
+                            經營理念是希望將精緻的咖啡品質做成外帶<br>
+                            讓好咖啡陪著你工作，陪著你到處旅行。<br>
+                            生活越是忙碌，我們越是需要一杯好咖啡。<br>
+                            所以把好咖啡裝進了外帶杯<br>
+                            並且融入你每一天的生活<br>這是我們右舍的責任與使命。<p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="about_2" data-aos="fade-up" data-aos-duration="3000">
+                        <h3>品牌故事</h3>
+                        <p>為什麼叫右舍?<br>
+                            這是最常回答的採訪問題<br>
+                            坦白講一開始在取店名的時候<br>
+                            只想到要成為一間社區咖啡館<br>
+                            一間屬於員林人的小小活動中心或好鄰居<br>
+                            舍身處的位置萬年路是一條單行道<br>
+                            我們在單行道的右邊<br>
+                            不如就叫右舍吧！<p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------小展覽---------- -->
+
+    <section id="exhibition">
+        <div class="container">
+            <div class="row ex_row">
+                <div class="exhibition_text">Exhibition</div>
+                <div class=" col-12 col-lg-6 exhibition_context">
+                    <h2 class="hvr-underline-from-center">小藝廊展覽</h2>
+                    ※店內展示之藝文刊物，歡迎需要的朋友取閱<br>
+
+                    ※店內不定期舉辦音樂活動或藝文體驗課程，詳情請關注粉絲專頁公告訊息<br>
+
+                    ※店內3樓藝文展覽空間每月固定展出不同靜態作品<br>
+
+                    ※申請3樓小藝廊展覽空間請至下列網址填寫申請表<br>
+
+                    歡迎彰化員林在地藝術家及在地大專院校創作者申請3樓藝文空間展出<br>
+                    推廣在地藝文風氣。
+                </div>
+                <!-- Swiper -->
+                <div class="col-12 col-lg-6 swiper-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./img/26220937_1786756868003260_8760586627202512071_o.jpg"
+                                alt=""></div>
+                        <div class="swiper-slide"><img src="./img/47453957_2206965182649091_6084106334842650624_o.jpg"
+                                alt=""></div>
+                        <div class="swiper-slide"><img src="./img/65487680_2524222267590046_4894779377469882368_o.jpg"
+                                alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="exhibition_pic"></div>
+    </section>
+    <!------------咖啡豆------------>
+    <section>
+        <div id="coffeebeans">
+            <div class="container">
+                <div class="row row_cb">
+                    <div class="coffeebeans_text">Coffeebeans</div>
+                    <h3 class="col-12" data-aos="fade-up" data-aos-duration="3000">咖啡豆</h3>
+                    <div class="col-12 col-lg-4 cards">
+                        <img src="./img/66438778_2551268898218716_4605268426754097152_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>巴布亞新幾內亞/天堂島<br>
+                                Papua New Guinea</h5>
+
+                            <p>海拔： 1500-1600m<br>
+                                烘焙程度：淺焙<br>
+                                風味描述： 檸檬皮香氣帶紅棗甜感<br>
+                                黑糖甜香混合葡萄乾酸甜<br>
+                                麥芽甜接連著白胡椒香氣尾韻<br>
+
+                                【原價】380<br>
+                                【會員】285</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cards ">
+                        <img src="./img/67549935_2586821217996817_2738461338224295936_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>巴拿馬波奎特/橘子莊園<br>
+                                Panama</h5>
+
+                            <p>海拔： 1350m<br>
+                                烘焙程度：淺焙<br>
+                                風味描述： 金棗酸甜帶鳳梨優格酸質<br>
+                                麥芽糖甜香混合陳皮梅酸香<br>
+                                無花果乾酸甜連接蓮子甜尾韻<br>
+
+
+                                【原價】450<br>
+                                【會員】338</p>
+
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cards">
+                        <img src="./img/69331418_2643774775634794_3208917405694689280_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>瓜地馬拉/拉米尼塔/花神<br>
+                                Guatemala</h5>
+
+                            <p>海拔： 1200-1600m<br>
+                                烘焙程度：中焙<br>
+                                風味描述：楓糖甜帶杏桃味<br>
+                                些許青蘋混合榛果香氣<br>
+                                甘草甜感帶黑巧克力尾韻<br>
+
+                                【原價】390<br>
+                                【會員】293</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cards">
+                        <img src="./img/71146584_2702554579756813_3829853476356096000_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>衣索比亞/水洗耶加雪菲/荷芙莎<br>
+                                Yirgacheffe</h5>
+
+                            <p>海拔： 1890m<br>
+                                烘焙程度：淺中焙<br>
+                                風味描述：愛玉的甜帶著蔓越莓酸感<br>
+                                紅玉紅茶香氣混合著薄荷糖的甜<br>
+                                檸檬皮香氣接連著菱角甜尾韻<br>
+
+                                【原價】380<br>
+                                【會員】285</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cards">
+                        <img src="./img/74718686_2776094649069472_2728063544523227136_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>衣索比亞/日曬西達摩/莓姬<br>
+                                Sidamo</h5>
+
+                            <p>海拔： 1900-2000m<br>
+                                烘焙程度：淺焙<br>
+                                風味描述：蘭姆酒香帶草莓醬酸甜<br>
+                                錫蘭紅茶茶感混合櫻桃酸香<br>
+                                杏仁香氣接連著核桃巧克力尾韻<br>
+
+                                【原價】450<br>
+                                【會員】338</p>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cards">
+                        <img src="./img/79090921_2837657679579835_3176674497793097728_o.jpg" alt="">
+                        <div class="txt">
+                            <h5>盧安達/日曬<br>
+                                Rwanda</h5>
+
+                            <p>海拔： 1200-1600m<br>
+                                烘焙程度：中焙<br>
+                                風味描述：楓糖甜帶杏桃味<br>
+                                些許青蘋混合榛果香氣<br>
+                                甘草甜感帶黑巧克力尾韻<br>
+
+                                【原價】390<br>
+                                【會員】293</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------menu---------- -->
+
+
+
+
+
+    <!-- ----------儲值卡---------- -->
+    <section>
+        <div id="card">
+            <div class="container">
+                <div class="row row_card">
+                    <div class="card_text">Card</div>
+                    <div class="col-12" data-aos="fade-up" data-aos-duration="3000">
+                        <h3>儲值卡</h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="card_context">
+                            <p>入會儲值方式<br>
+                                <a href="https://pse.is/JQSYP" target="_blank"> 加入儲值會員</a><br>
+                                首次申辦會員以一千元開卡儲值及完成資訊填寫確認核對無誤後<br>
+                                您就是成為右舍VIP會員囉<br>
+                                （開卡儲值的一千元是可以抵消費使用的唷）</p>
+
+                            <p>右舍會員福利<br>
+                                月底前訂購皆享會員價及宅配服務(未含運)<br>
+                                右舍VIP：平日早上11點前 內用可享外帶價<br>
+                                外送服務專線：04-8364864(限平日)</p>
+
+                            <a href="" data-toggle="modal" data-target="#Precautions">注意事項</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="Precautions" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">注意事項</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>1.右舍會員即可獲取手繪VIP右舍會員卡乙張</p>
+
+                                            <p>2.儲值金額為儲一千送一張招待券，儲兩千送三張招待券。</p>
+
+                                            <p>3.攜帶身份相關證明即可至右舍門市櫃檯兌換生日禮券乙張。</p>
+
+                                            <p>4.即可購買當月福利品（單品咖啡豆半磅）及單品咖啡（不限內用外帶），一律75折優惠。</p>
+
+                                            <p>5.架上飲品，不限內用外帶、不限品項，一律九折優待。</p>
+
+                                            <p>6.周邊商品、相關咖啡器材、右舍咖啡課程活動<br>一律享有九折優惠。</p>
+
+                                            <p>7.享早鳥優惠在非假日11點前時段完成點單<br>架上飲品內用一律以外帶價優惠。</p>
+
+                                            <p>8.至特約商店消費，可享店家獨特優惠</p>
+
+                                            <p>9.消費金額滿50元，會員系統會自動回饋點數1點<br>（100元則會有2點.以此類推）
+                                                點數視同現金<br>
+                                                累積點數可兌換架上任何商品，兌換同等價格商品之後，點數則會歸零重新統計。</p>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ----------footer---------- -->
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div class="row footer_box">
+                    <div class="col-12 col-lg-6">
+                        <div class="footer_logo">
+                            <img src="./img/logo.jpg" alt="" width="100">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="footer_text">
+                            <div class="add">
+                                <p>員林市萬年路三段67號</p>
+                            </div>
+                            <div class="phone">
+                                <p>04 - 836 - 4864</p>
+                            </div>
+                            <div class="time">
+                                <p>AM8:00 - PM6:00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="icon">
+                            <img src="./img/facebook.png" alt="" width="30">
+                            <img src="./img/instagram.png" alt="" width="30">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="footer_copy">版權聲明Copyright©xxxx-xxxxby右舍咖啡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ----------gototop--------- -->
+    <div class="top"></div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="./js/fontawesome-all.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+    <script>
+        const icons = document.querySelectorAll('.icon');
+        icons.forEach(icon => {
+            icon.addEventListener('click', (event) => {
+                icon.classList.toggle("open");
+            });
+        });
+
+    </script>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 10,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+    </script>
+
+
+</body>
+
+</html>
