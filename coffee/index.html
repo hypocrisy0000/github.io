@@ -459,11 +459,22 @@
         }
 
         #card .card_context a {
+            width: 300px;
             display: block;
-            width: 100%;
+            margin: auto;
             text-align: center;
-            color: brown;
+            color: #c57d7d;
             text-decoration: none;
+            font-weight: 900;
+            background-color: rgb(243, 243, 243);
+        }
+
+        #card .card_box{
+            display: block;
+        }
+
+        #card  .card_box:hover{
+            color: #55B2C7;
         }
 
         #Precautions .modal-body,
@@ -519,6 +530,16 @@
         #footer .footer_text .time {
             letter-spacing: 2.2px;
         }
+
+        #footer .footer_text a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .hvr-underline-from-right:before{
+            background-color: rgb(206, 135, 135);
+        }
+
 
 
         /* ----------gototop---------- */
@@ -582,8 +603,8 @@
             }
 
             #exhibition .swiper-container {
-            padding: 100px 0 0 0;
-            height: 250px;
+            padding: 150px 0 0 0;
+            height: 450px;
         }
 
         #exhibition .exhibition_context{
@@ -646,11 +667,11 @@
                 <div class="bg-light p-4">
                     <div class="btn_box">
                         <div class="btns">
-                            <div class="btn hvr-underline-from-left">關於右舍</div>
-                            <div class="btn hvr-underline-from-left">小藝廊展覽</div>
-                            <div class="btn hvr-underline-from-left">咖啡豆</div>
-                            <div class="btn hvr-underline-from-left">菜單</div>
-                            <div class="btn hvr-underline-from-left">儲值卡</div>
+                            <a href="#about"><div class="btn hvr-underline-from-left">關於右舍</div></a>
+                            <a href="#exhibition"><div class="btn hvr-underline-from-left">小藝廊展覽</div></a>
+                            <a href="#coffeebeans"><div class="btn hvr-underline-from-left">咖啡豆</div></a>
+                            <a href="#menu"><div class="btn hvr-underline-from-left">菜單</div></a>
+                            <a href="#card"><div class="btn hvr-underline-from-left">儲值卡</div></a>
                         </div>
                     </div>
                 </div>
@@ -1014,7 +1035,7 @@
                     <div class="col-12">
                         <div class="card_context">
                             <p>入會儲值方式<br>
-                                <a href="https://pse.is/JQSYP" target="_blank"> 加入儲值會員</a><br>
+                                <a href="https://pse.is/JQSYP" target="_blank" class="card_box"> 加入儲值會員</a><br>
                                 首次申辦會員以一千元開卡儲值及完成資訊填寫確認核對無誤後<br>
                                 您就是成為右舍VIP會員囉<br>
                                 （開卡儲值的一千元是可以抵消費使用的唷）</p>
@@ -1024,14 +1045,14 @@
                                 右舍VIP：平日早上11點前 內用可享外帶價<br>
                                 外送服務專線：04-8364864(限平日)</p>
 
-                            <a href="" data-toggle="modal" data-target="#Precautions">注意事項</a>
+                            <a href="" data-toggle="modal" data-target="#Precautions" class="card_box" >注意事項</a>
                             <!-- Modal -->
                             <div class="modal fade" id="Precautions" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">注意事項</h5>
+                                            <h5 class="modal-title" id="exampleModalLongTitle" >注意事項</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -1101,9 +1122,9 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="footer_text">
-                            <div class="add">
-                                <p>員林市萬年路三段67號</p>
-                            </div>
+                            <a href="https://goo.gl/maps/esgbku9KuFm8qjGW6"><div class="add hvr-underline-from-right">
+                                員林市萬年路三段67號</div></a>
+                            
                             <div class="phone">
                                 <p>04 - 836 - 4864</p>
                             </div>
@@ -1114,8 +1135,9 @@
                     </div>
                     <div class="col-12">
                         <div class="icon">
-                            <img src="./img/facebook.png" alt="" width="30">
-                            <img src="./img/instagram.png" alt="" width="30">
+                            <a href="https://zh-tw.facebook.com/taiwanvicinocafe/"  target="_blank"><img src="./img/facebook.png" alt="" width="30"></a>
+                            <a href="https://www.instagram.com/vicinocafe/?hl=zh-tw"  target="_blank"><img src="./img/instagram.png" alt="" width="30"></a>
+                            
                         </div>
                     </div>
                     <div class="col-12">
