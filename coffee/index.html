@@ -471,6 +471,7 @@
 
         #card .card_box{
             display: block;
+            transition: 0.5s;
         }
 
         #card  .card_box:hover{
@@ -553,6 +554,7 @@
             position: fixed;
             right: 30px;
             bottom: 30px;
+            display: none;
         }
 
 
@@ -1027,7 +1029,7 @@
     <section>
         <div id="card">
             <div class="container">
-                <div class="row_card">
+                <div class="row_card ">
                     <div class="card_text">Card</div>
                     <div class="col-12" data-aos="fade-up" data-aos-duration="3000">
                         <h3>儲值卡</h3>
@@ -1166,7 +1168,8 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="./js/fontawesome-all.min.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script>
         AOS.init();
     </script>
@@ -1181,6 +1184,25 @@
                 icon.classList.toggle("open");
             });
         });
+
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                var totop =  $(window).scrollTop();
+
+                if(totop>400){
+                    $('.top').fadeIn();
+
+                }else{
+                    $('.top').fadeOut();
+                }
+
+            });
+
+
+        });
+
+
+
 
     </script>
 
