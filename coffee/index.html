@@ -257,6 +257,110 @@
             margin: 10px 0;
         }
 
+        /* ----------菜單---------- */
+
+        #menu .menu_pic {
+
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+
+            background-position: center;
+            border-top: 2px solid #fff;
+        }
+
+        #menu .d_coffee {
+            background-image: url('./img/6a02083224c410275a8caf9fd0954cad.jpg');
+        }
+
+        #menu .coffee {
+            background-image: url('./img/4185375ce7b5bb18cde1998c3e06cd7e.jpg');
+        }
+
+        #menu .LATTE{
+            background-image: url('./img/c9e2f16bd0482311eee4c7055d3f7295.jpg');
+        }
+
+        #menu .CHOCOLATE{
+            background-image: url('./img/4b9e53420b49f435156dcbd56894f77d.jpg');
+        }
+
+        #menu .soda{
+            background-image: url('./img/1587354088415.jpg');
+        }
+
+        #menu .DESSERT{
+            background-image: url('./img/16107468_1435673466443081_5379838130381085135_o.jpg');
+        }
+        #menu .row_menu {
+            position: relative;
+        }
+
+        #menu .menu_text {
+            writing-mode: vertical-lr;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -7%;
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 35px;
+        }
+
+        #menu .title {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            background-color: rgba(0, 0, 0, 0.397);
+
+        }
+
+        #menu .title h6 {
+            width: 100%;
+            text-align: center;
+            font-family: "微軟正黑體";
+            position: absolute;
+            top: 50%;
+            color: white;
+            transform: translateY(-50%);
+            font-size: 20px;
+            border-bottom: 1px solid #fff;
+        }
+
+        #menu h3 {
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            padding: 50px 0;
+            background-color: black;
+            color: white;
+            font-family: "微軟正黑體";
+        }
+
+        #menu .coffe_box {
+            border-top: 2px solid #fff;
+            background-color: black;
+            color: white;
+            font-family: "微軟正黑體";
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        #menu .d_coffee_text , #menu .LATTE_text ,#menu .CHOCOLATE_text ,#menu .DESSERT_text{
+            column-count: 2;
+        }
+
+        #menu .coffee_text {
+            column-count: 3;
+
+        }
+
+
+        #menu span {
+            float: right;
+        }
+
         /* <!------------咖啡豆------------> */
         #coffeebeans .row_cb {
             position: relative;
@@ -430,6 +534,11 @@
 
 
         @media screen and (max-width:992px) {
+
+            #exhibition .swiper-container {
+            padding: 150px 0 0 0;
+            height: 200px;
+        }
             #exhibition .exhibition_context {
                 padding: unset;
             }
@@ -456,6 +565,44 @@
             #footer .footer_text {
                 text-align: center;
             }
+        }
+
+        @media screen and (max-width:768px) {
+
+            #about .about_1 ,  #about .about_2 {
+                font-size: 10px;
+            }
+
+            #exhibition .swiper-container {
+            padding: 150px 0 0 0;
+            height: 300px;
+        }
+
+        #exhibition .exhibition_context{
+            font-size: 10px;
+        }
+
+            #coffeebeans .txt h5 {
+                font-size: 15px;
+            }
+
+            #coffeebeans .txt {
+                font-size: 15px;
+            }
+
+            #menu .title {
+                padding-top: 10px ;
+
+            }
+            #menu .title h6 {
+                position: unset;
+                transform: translateY(0);
+                border: 0;
+            }
+            #menu .coffe_box {
+                font-size: 10px;
+            }
+
         }
     </style>
 </head>
@@ -679,9 +826,154 @@
             </div>
         </div>
     </section>
+
+
     <!-- ----------menu---------- -->
 
+    <section>
+        <div id="menu">
+            <div class="container">
+                <div class="row_menu no-gutters">
+                    <div class="menu_text">Menu</div>
+                    <h3 class="col-12">菜單</h3>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3">
+                            <div class="menu_pic d_coffee">
+                                <div class="title">
+                                    <h6>滴咖啡<br>DRIP COFFEE</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="d_coffee_text coffe_box">
+                                <p>蘇門答臘<br>Sumatra<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>哥斯大黎加<br>Costa Rica<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>肯亞<br>Kenya<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>耶加雪夫<br>Ethiopia<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>瓜地馬拉<br>Guatemala<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>巴拿馬<br>Panama<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>西達摩<br>Sidamo<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>巴布亞新幾內亞<br>Papua New<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3 order-md-1">
+                            <div class="menu_pic coffee">
+                                <div class="title">
+                                    <h6>咖啡<br>COFFEE</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="coffee_text coffe_box">
+                                <p>義式濃縮咖啡<br>Coffee espresso<span>115 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>原味美式咖啡<br>Coffee americano 8oz<span>105 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>濃縮冰咖啡<br>Coffee shakerato<span>120 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>甘蔗冰咖啡<br>Sugar cane americano<span>130 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>荔枝冰咖啡<br>Lychee americano<span>125 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>檸檬冰咖啡<br>Lemon americano<span>125 <img src="./img/coin.png" alt="" width="20"></span>
+                                </p>
+                                <p>黑糖卡布奇諾<br>Brown Sugar cappuccino<span>145 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>柳橙冰咖啡<br>Orange americano<span>140 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>卡布奇諾<br>Cappuccino<span>125 <img src="./img/coin.png" alt="" width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3">
+                            <div class="menu_pic LATTE">
+                                <div class="title">
+                                    <h6>拿鐵<br>LATTE</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="LATTE_text coffe_box">
+                                <p>原味經典拿鐵<br>Original latte 12oz<span>125 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>榛果特調拿鐵<br>Hazelnut latte<span>130 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>香草特調拿鐵<br>Vanilla latte<span>130 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>焦糖特調拿鐵<br>Caramel latte<span>130 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>橙香甜酒拿鐵<br>Cointreau coffee<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>奶油甜酒拿鐵<br>Baileys coffee<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>冰牛奶糖拿鐵I<br>Ice toffee latte<span>140 <img src="./img/coin.png" alt="" width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3 order-md-1">
+                            <div class="menu_pic CHOCOLATE">
+                                <div class="title">
+                                    <h6>巧克力<br>CHOCOLATE</h6>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="CHOCOLATE_text coffe_box">
+                                <p>原味特濃巧克力<br>Original chocolate<span>130 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>貝里斯奶酒巧克力<br>Berris chocolate<span>140 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>薄荷特調巧克力<br>Mint chocolate<span>140 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>橙香甜酒巧克力<br>Cointreau chocolate<span>140 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>覆盆子巧克力<br>Raspberry chocolate<span>140 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3">
+                            <div class="menu_pic soda">
+                                <div class="title">
+                                    <h6>蘇打/茶/果汁<br>SODA/TEA/JUICE</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="soda_text coffe_box">
+                                <p>靜岡抹茶歐蕾<br>Matcha&Aulate<span>130 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>覆盆子蘋果蘇打<br>Raspberry apple soda<span>145 <img src="./img/coin.png" alt="" width="20"></span></p>
+                                <p>蜂蜜白柚茶<br>茶Pomelo honey Tea<span>130 <img src="./img/coin.png" alt="" width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-3 order-md-1">
+                            <div class="menu_pic DESSERT">
+                                <div class="title">
+                                    <h6>甜點<br>DESSERT</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="DESSERT_text coffe_box">
+                                <p>紐約客重乳酪蛋糕<br>Cheese cake<span>80 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>家傳芝麻捲<br>Sesame cake roll<span>85 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>伯爵奶茶捲<br>Earl Grey Tea cake Roll<span>85 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>小森林抹茶塔<br>Matcha ganache tart<span>115 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                                <p>瞇瞇眼檸檬塔<br>Lemon tart<span>115 <img src="./img/coin.png" alt=""
+                                            width="20"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -689,7 +981,7 @@
     <section>
         <div id="card">
             <div class="container">
-                <div class="row row_card">
+                <div class="row_card">
                     <div class="card_text">Card</div>
                     <div class="col-12" data-aos="fade-up" data-aos-duration="3000">
                         <h3>儲值卡</h3>
