@@ -235,6 +235,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            z-index: 500;
             left: -7%;
             font-family: 'Nothing You Could Do', cursive;
             font-size: 35px;
@@ -302,6 +303,7 @@
             top: 50%;
             transform: translateY(-50%);
             left: -7%;
+            z-index: 500;
             font-family: 'Nothing You Could Do', cursive;
             font-size: 35px;
         }
@@ -411,6 +413,7 @@
         #coffeebeans .coffeebeans_text {
             writing-mode: vertical-lr;
             position: absolute;
+            z-index: 500;
             top: 55%;
             transform: translateY(-50%);
             left: -7%;
@@ -429,6 +432,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            z-index: 500;
             left: -7%;
             font-family: 'Nothing You Could Do', cursive;
             font-size: 35px;
@@ -519,15 +523,15 @@
 
         /* ----------gototop---------- */
         .top {
-            width: 80px;
-            height: 80px;
-            /* border: black 1px solid; */
-            /* background-color: rgb(255, 255, 255); */
-            border-radius: 50px;
-            background-image: url('./img/up-arrow.png');
+            width: 50px;
+            height: 50px;
+            background-image: url('./img/coffee.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
         }
 
 
@@ -569,13 +573,17 @@
 
         @media screen and (max-width:768px) {
 
+            .nav-icon-6{
+                margin: 50px 0px 0 0;
+            }
+
             #about .about_1 ,  #about .about_2 {
                 font-size: 10px;
             }
 
             #exhibition .swiper-container {
-            padding: 150px 0 0 0;
-            height: 300px;
+            padding: 100px 0 0 0;
+            height: 250px;
         }
 
         #exhibition .exhibition_context{
@@ -602,7 +610,18 @@
             #menu .coffe_box {
                 font-size: 10px;
             }
+            #menu .d_coffee_text , #menu .LATTE_text ,#menu .CHOCOLATE_text ,#menu .DESSERT_text, #menu .coffee_text {
+                column-count: 1;
+            }
 
+            .top{
+                right: 5px;
+                bottom: 5px;
+            }
+
+            #card .card_context{
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -836,7 +855,8 @@
                 <div class="row_menu no-gutters">
                     <div class="menu_text">Menu</div>
                     <h3 class="col-12">菜單</h3>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3">
                             <div class="menu_pic d_coffee">
                                 <div class="title">
@@ -857,7 +877,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3 order-md-1">
                             <div class="menu_pic coffee">
                                 <div class="title">
@@ -887,7 +908,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3">
                             <div class="menu_pic LATTE">
                                 <div class="title">
@@ -907,7 +929,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3 order-md-1">
                             <div class="menu_pic CHOCOLATE">
                                 <div class="title">
@@ -931,7 +954,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3">
                             <div class="menu_pic soda">
                                 <div class="title">
@@ -947,7 +971,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" data-aos="fade-up"
+                    data-aos-duration="3000">
                         <div class="col-12 col-md-3 order-md-1">
                             <div class="menu_pic DESSERT">
                                 <div class="title">
@@ -1102,7 +1127,8 @@
     </footer>
 
     <!-- ----------gototop--------- -->
-    <div class="top"></div>
+    <a href="#"><div class="top hvr-wobble-vertical"></div></a>
+    
 
 
 
