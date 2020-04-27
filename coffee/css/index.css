@@ -1,0 +1,635 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----------nav bar---------- */
+
+.btn_box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pos-f-t {
+    float: left;
+    width: 100%;
+}
+
+.btn {
+    width: 110px;
+    height: 50px;
+    border-radius: 0px;
+    font-family: 微軟正黑體;
+    text-align: center;
+    line-height: 40px;
+}
+
+.btns a {
+    text-decoration: none;
+}
+
+.hvr-underline-from-left:before {
+    background-color: rgb(140, 192, 196);
+}
+
+.btn:hover {
+    color: rgb(184, 184, 184);
+    /* background-color: rgb(228, 228, 228); */
+    /* transition: 0.5s; */
+}
+
+nav {
+    float: right;
+}
+
+
+/* ----------按鈕---------- */
+.nav-icon-6 {
+    width: 35px;
+    height: 30px;
+    margin: 50px 100px 0 0;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.nav-icon-6 span {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 4px;
+}
+
+.nav-icon-6 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+}
+
+.nav-icon-6 span:nth-child(2) {
+    top: 13px;
+    left: 0px;
+}
+
+.nav-icon-6 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+}
+
+.nav-icon-6:not(.open):hover span:nth-child(1) {
+    transform: scaleY(1.2);
+    left: -5px;
+}
+
+.nav-icon-6:not(.open):hover span:nth-child(2) {
+    transform: rotate(5deg) scaleY(1.1);
+}
+
+.nav-icon-6:not(.open):hover span:nth-child(3) {
+    transform: scaleY(1.2);
+    left: 5px;
+}
+
+.nav-icon-6.open span:nth-child(1) {
+    transform: rotate(45deg) scaleX(0.7);
+    top: 13PX;
+    left: -8px;
+}
+
+.nav-icon-6.open span:nth-child(2) {
+    transform: scale(0);
+    transition-duration: 50ms
+}
+
+.nav-icon-6.open span:nth-child(3) {
+    transform: rotate(-45deg) scaleX(0.7);
+    top: 13PX;
+    left: 7px;
+}
+
+/* ----------banner---------- */
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#banner .container-fluid {
+    padding: 0;
+}
+
+#banner .pic {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/38085222_2032985673380377_3717374729619767296_o.jpg');
+}
+
+/* ----------關於右舍---------- */
+#about {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#about .pic {
+    width: 100%;
+    height: 100vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url('../img/50527396_2276388762373399_9200188735398871040_o.jpg');
+}
+
+#about .about_1 {
+    background-color: rgba(252, 252, 252, 0.445);
+    font-family: '微軟正黑體';
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+#about .about_2 {
+    background-color: rgba(0, 0, 0, 0.445);
+    font-family: '微軟正黑體';
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px 0;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+#about h3 {
+    padding: 15px 0;
+}
+
+#about .about_text {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -7%;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 35px;
+}
+
+/* ----------展覽---------- */
+#exhibition {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#exhibition .swiper-container {
+    padding: 150px 0 0 0;
+    height: 425px;
+}
+
+#exhibition .swiper-container img {
+    width: 100%;
+}
+
+#exhibition .exhibition_context {
+    width: 100%;
+    background-color: white;
+    padding: 170px 0;
+    line-height: 35px;
+    font-family: '微軟正黑體';
+}
+
+#exhibition .exhibition_pic {
+    width: 100%;
+    height: 35vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/82940565_2968639826481619_2236654732502368256_o.jpg');
+}
+
+#exhibition .exhibition_text {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+    left: -7%;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 35px;
+}
+
+#exhibition h2 {
+    text-align: center;
+    display: block;
+    width: 200px;
+    margin: 0px auto;
+}
+
+.hvr-underline-from-center:before {
+    background-color: rgb(140, 192, 196);
+}
+
+#exhibition .ex_row {
+    position: relative;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+/* ----------菜單---------- */
+
+#menu .menu_pic {
+
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+    background-position: center;
+    border-top: 2px solid #fff;
+}
+
+#menu .d_coffee {
+    background-image: url('../img/6a02083224c410275a8caf9fd0954cad.jpg');
+}
+
+#menu .coffee {
+    background-image: url('../img/4185375ce7b5bb18cde1998c3e06cd7e.jpg');
+}
+
+#menu .LATTE{
+    background-image: url('../img/c9e2f16bd0482311eee4c7055d3f7295.jpg');
+}
+
+#menu .CHOCOLATE{
+    background-image: url('../img/4b9e53420b49f435156dcbd56894f77d.jpg');
+}
+
+#menu .soda{
+    background-image: url('../img/1587354088415.jpg');
+}
+
+#menu .DESSERT{
+    background-image: url('../img/16107468_1435673466443081_5379838130381085135_o.jpg');
+}
+#menu .row_menu {
+    position: relative;
+}
+
+#menu .menu_text {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -7%;
+    z-index: 500;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 35px;
+}
+
+#menu .title {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    background-color: rgba(0, 0, 0, 0.397);
+
+}
+
+#menu .title h6 {
+    width: 100%;
+    text-align: center;
+    font-family: "微軟正黑體";
+    position: absolute;
+    top: 50%;
+    color: white;
+    transform: translateY(-50%);
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+#menu h3 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+    background-color: black;
+    color: white;
+    font-family: "微軟正黑體";
+}
+
+#menu .coffe_box {
+    border-top: 2px solid #fff;
+    background-color: black;
+    color: white;
+    font-family: "微軟正黑體";
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+#menu .d_coffee_text , #menu .LATTE_text ,#menu .CHOCOLATE_text ,#menu .DESSERT_text{
+    column-count: 2;
+}
+
+#menu .coffee_text {
+    column-count: 3;
+
+}
+
+
+#menu span {
+    float: right;
+}
+
+/* <!------------咖啡豆------------> */
+#coffeebeans .row_cb {
+    position: relative;
+    margin: 10px;
+}
+
+#coffeebeans h3 {
+    text-align: center;
+    font-family: "微軟正黑體";
+    margin: 40px 0;
+}
+
+#coffeebeans .row_cb img {
+    width: 100%;
+}
+
+#coffeebeans .cards {
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#coffeebeans .txt {
+    font-family: "微軟正黑體";
+    font-weight: 900;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(252, 252, 252, 0.445);
+    position: absolute;
+    top: 60%;
+    left: 0;
+    text-align: center;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#coffeebeans .txt h5 {
+    font-weight: 900;
+    margin-bottom: 90px;
+}
+
+#coffeebeans .cards:hover .txt {
+    top: 0;
+}
+
+#coffeebeans .coffeebeans_text {
+    writing-mode: vertical-lr;
+    position: absolute;
+    z-index: 500;
+    top: 55%;
+    transform: translateY(-50%);
+    left: -7%;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 35px;
+}
+
+/* ----------儲值卡---------- */
+#card .row_card {
+    position: relative;
+    margin: 10px 0;
+}
+
+#card .card_text {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+    left: -7%;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 35px;
+}
+
+#card h3 {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    font-family: "微軟正黑體";
+
+}
+
+#card .card_context {
+    border: 5px black solid;
+    padding: 30px 0;
+    font-family: "微軟正黑體";
+
+}
+
+#card .card_context p {
+    text-align: center;
+    padding: 15px 0;
+}
+
+#card .card_context a {
+    width: 300px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #c57d7d;
+    text-decoration: none;
+    font-weight: 900;
+    background-color: rgb(243, 243, 243);
+}
+
+#card .card_box{
+    display: block;
+    transition: 0.5s;
+}
+
+#card  .card_box:hover{
+    color: #55B2C7;
+}
+
+#Precautions .modal-body,
+#card .card_context h5 {
+    font-family: "微軟正黑體";
+}
+
+#Precautions .modal-body p {
+    text-align: left;
+
+}
+
+
+/* ----------footer---------- */
+#footer {
+    width: 100%;
+    background-color: rgb(39, 37, 48);
+}
+
+#footer .footer_copy {
+    text-align: center;
+    color: white;
+    font-family: "微軟正黑體";
+    padding: 20px 0;
+    border-top: rgb(253, 253, 253) 3px solid;
+}
+
+#footer .icon {
+    text-align: center;
+}
+
+#footer .icon img {
+    margin: 20px 10px;
+}
+
+#footer .footer_logo {
+    padding: 20px 0;
+}
+
+#footer .footer_text {
+    color: white;
+    text-align: right;
+    line-height: 23px;
+    font-family: "微軟正黑體";
+    padding: 20px 0;
+}
+
+#footer .footer_text .phone {
+    margin: 10px 0;
+    letter-spacing: 3.2px;
+}
+
+#footer .footer_text .time {
+    letter-spacing: 2.2px;
+}
+
+#footer .footer_text a{
+    color: white;
+    text-decoration: none;
+}
+
+.hvr-underline-from-right:before{
+    background-color: rgb(206, 135, 135);
+}
+
+
+
+/* ----------gototop---------- */
+.top {
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/coffee.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: none;
+}
+
+
+
+
+@media screen and (max-width:992px) {
+
+    #exhibition .swiper-container {
+    padding: 150px 0 0 0;
+    height: 200px;
+}
+    #exhibition .exhibition_context {
+        padding: unset;
+    }
+
+    #about .pic {
+        background-size: cover;
+        margin: 10px 0;
+    }
+
+    #exhibition .swiper-container {
+        padding: 140px 0 0 0;
+        height: 550px;
+    }
+
+    #coffeebeans .txt h5 {
+        font-size: 30px;
+    }
+
+    #coffeebeans .txt {
+        font-size: 25px;
+    }
+
+    #footer .footer_logo,
+    #footer .footer_text {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .nav-icon-6{
+        margin: 50px 0px 0 0;
+    }
+
+    #about .about_1 ,  #about .about_2 {
+        font-size: 10px;
+    }
+
+    #exhibition .swiper-container {
+    padding: 150px 0 0 0;
+    height: 450px;
+}
+
+#exhibition .exhibition_context{
+    font-size: 10px;
+}
+
+    #coffeebeans .txt h5 {
+        font-size: 15px;
+    }
+
+    #coffeebeans .txt {
+        font-size: 15px;
+    }
+
+    #menu .title {
+        padding-top: 10px ;
+
+    }
+    #menu .title h6 {
+        position: unset;
+        transform: translateY(0);
+        border: 0;
+    }
+    #menu .coffe_box {
+        font-size: 10px;
+    }
+    #menu .d_coffee_text , #menu .LATTE_text ,#menu .CHOCOLATE_text ,#menu .DESSERT_text, #menu .coffee_text {
+        column-count: 1;
+    }
+
+    .top{
+        right: 5px;
+        bottom: 5px;
+    }
+
+    #card .card_context{
+        font-size: 10px;
+    }
+}
