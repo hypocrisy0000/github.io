@@ -373,14 +373,15 @@ nav {
 }
 
 #coffeebeans .txt {
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
     font-family: "微軟正黑體";
     font-weight: 900;
-    width: 100%;
+    width: calc(100% - 30px);
     height: 100%;
-    background-color: rgba(252, 252, 252, 0.445);
+    background-color: rgba(255, 255, 255, 0.164);
     position: absolute;
     top: 60%;
-    left: 0;
+    left: 15px;
     text-align: center;
     transition: 0.5s;
     display: flex;
@@ -583,6 +584,10 @@ nav {
 
 @media screen and (max-width:768px) {
 
+    .btn{
+        width: 100%;
+    }
+
     .nav-icon-6{
         margin: 50px 0px 0 0;
     }
@@ -632,4 +637,5 @@ nav {
     #card .card_context{
         font-size: 10px;
     }
+
 }
